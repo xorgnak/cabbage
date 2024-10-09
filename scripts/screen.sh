@@ -1,5 +1,5 @@
 
-sudo apt install screen emacs-nox emacs-goodies-el mosquitto mosquitto-clients ruby-full 
+sudo apt install screen emacs-nox emacs-goodies-el mosquitto mosquitto-clients ruby-full -y
 
 cat << END > ~/.screenrc 
 shell -${SHELL}
@@ -10,6 +10,7 @@ hardstatus on
 hardstatus alwayslastline
 screen -t EMACS 0 emacs -nw --visit ~/index.org
 screen -t LLAMA 1 llama --cli --color -p "What is the meaning of life?"
+screen -t '>' 2 pry -r cabbage/scripts/shell.rb
 screen -t BT 8 bluetoothctl
 screen -t TOP 9 htop
 select 3
