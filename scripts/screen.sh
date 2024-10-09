@@ -9,11 +9,11 @@ startup_message off
 hardstatus on
 hardstatus alwayslastline
 screen -t EMACS 0 emacs -nw --visit ~/index.org
-screen -t LLAMA 1 llama --cli --color -p "What is the meaning of life?"
+screen -t LLAMA 1 llama --cli --color --interactive-first
 screen -t '>' 2 ruby cabbage/scripts/shell.rb
 screen -t BT 8 bluetoothctl
 screen -t TOP 9 htop
-select 3
+select 1
 END
 
 echo "--[CABBAGE] DONE."
