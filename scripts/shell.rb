@@ -7,6 +7,6 @@ MACHINE = File.read("/etc/machine-id").strip
 IP = `hostname -I`.strip.split(" ")
 HOSTNAME = `hostname`.strip
 
-Dir['lib/*.rb'].each { |e| load e; puts "LOADED: #{e}" }
+Dir["/home/#{ENV['USER']}/cabbage/lib/*.rb"].each { |e| load e; puts "LOADED: #{e}" }
 
 Pry.start
